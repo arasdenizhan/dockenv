@@ -66,10 +66,10 @@ The tool is designed to be fast, dependency-free, and CI-friendly, making it sui
 
 - 🧠 **Rule-Based Risk Analysis Engine**
   - Built-in detection rules identify common secret patterns:
-    - Credentials (PASSWORD, PASS, SECRET)
-    - Tokens (TOKEN, JWT, AUTH)
-    - API keys (API_KEY, ACCESS_KEY)
-    - Private keys & sensitive configs
+    - Credentials (PASSWORD, SECRET)
+    - Tokens (TOKEN, JWT, AUTH) (coming soon)
+    - API keys (API_KEY, ACCESS_KEY) (coming soon)
+    - Private keys & sensitive configs (coming soon)
 
 - 📊 **Risk Scoring System**
   - Each finding is evaluated and assigned a severity score so you can quickly prioritize real threats over noise.
