@@ -137,15 +137,15 @@ The tool is designed to be fast, dependency-free, and CI-friendly, making it sui
 			</thead>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/arasdenizhan/dockenv/blob/master/go.sum'>go.sum</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>go sum file</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/arasdenizhan/dockenv/blob/master/main.go'>main.go</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Entrypoint for dockenv</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/arasdenizhan/dockenv/blob/master/go.mod'>go.mod</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>go mod file</code></td>
 				</tr>
 			</table>
 		</blockquote>
@@ -171,7 +171,7 @@ The tool is designed to be fast, dependency-free, and CI-friendly, making it sui
 					</thead>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/arasdenizhan/dockenv/blob/master/pkg/model/finding.go'>finding.go</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+							<td style='padding: 8px;'>Common models for dockenv</td>
 						</tr>
 					</table>
 				</blockquote>
@@ -199,7 +199,7 @@ The tool is designed to be fast, dependency-free, and CI-friendly, making it sui
 					</thead>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/arasdenizhan/dockenv/blob/master/internal/scanner/scan.go'>scan.go</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+							<td style='padding: 8px;'>Scanner orchestration methods for both images and containers. After getting raw env values, these raw env variables will be analyzed and score will be calculated.</td>
 						</tr>
 					</table>
 				</blockquote>
@@ -219,11 +219,11 @@ The tool is designed to be fast, dependency-free, and CI-friendly, making it sui
 					</thead>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/arasdenizhan/dockenv/blob/master/internal/analyzer/scorer.go'>scorer.go</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+							<td style='padding: 8px;'>Finds score for given Findings</td>
 						</tr>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/arasdenizhan/dockenv/blob/master/internal/analyzer/rules.go'>rules.go</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+							<td style='padding: 8px;'>Rules for analyzing the raw env variables</td>
 						</tr>
 					</table>
 				</blockquote>
@@ -243,11 +243,11 @@ The tool is designed to be fast, dependency-free, and CI-friendly, making it sui
 					</thead>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/arasdenizhan/dockenv/blob/master/internal/output/table.go'>table.go</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+							<td style='padding: 8px;'>Prints results in according to output style.</td>
 						</tr>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/arasdenizhan/dockenv/blob/master/internal/output/color.go'>color.go</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+							<td style='padding: 8px;'>Global color controller for printing colorful/no color output from CLI</td>
 						</tr>
 					</table>
 				</blockquote>
@@ -267,11 +267,11 @@ The tool is designed to be fast, dependency-free, and CI-friendly, making it sui
 					</thead>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/arasdenizhan/dockenv/blob/master/internal/docker/image.go'>image.go</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+							<td style='padding: 8px;'>Docker SDK Image Scanning Flow</td>
 						</tr>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='https://github.com/arasdenizhan/dockenv/blob/master/internal/docker/container.go'>container.go</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+							<td style='padding: 8px;'>Docker SDK Container Scanning Flow</td>
 						</tr>
 					</table>
 				</blockquote>
@@ -293,11 +293,11 @@ The tool is designed to be fast, dependency-free, and CI-friendly, making it sui
 			</thead>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/arasdenizhan/dockenv/blob/master/cmd/root.go'>root.go</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Root command starter</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/arasdenizhan/dockenv/blob/master/cmd/scan.go'>scan.go</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Scan command starter</td>
 				</tr>
 			</table>
 		</blockquote>
