@@ -6,6 +6,7 @@
 <img src="./dockenv-logo.png" width="30%" style="position: relative; top: 0; right: 0;" alt="Dockenv Logo"/>
 
 # DOCKENV
+
 ### Scan Docker containers & images for risky environment variables
 
 <em></em>
@@ -34,9 +35,7 @@
 - [Project Structure](#project-structure)
   - [Project Index](#project-index)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-  - [Usage](#usage)
   - [Testing](#testing)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
@@ -59,45 +58,46 @@ The tool is designed to be fast, dependency-free, and CI-friendly, making it sui
 ---
 
 ## Features
+
 - 🔍 **Docker Environment Variable Security Scanning**
-	- Scans Docker containers and images to detect sensitive or risky environment variables (e.g. secrets, tokens, passwords, API keys) 
+  - Scans Docker containers and images to detect sensitive or risky environment variables (e.g. secrets, tokens, passwords, API keys)
 
 - 🧠 **Rule-Based Risk Analysis Engine**
-	- Built-in detection rules identify common secret patterns:
-		- Credentials (PASSWORD, PASS, SECRET)
-		- Tokens (TOKEN, JWT, AUTH)
-		- API keys (API_KEY, ACCESS_KEY)
-		- Private keys & sensitive configs
+  - Built-in detection rules identify common secret patterns:
+    - Credentials (PASSWORD, PASS, SECRET)
+    - Tokens (TOKEN, JWT, AUTH)
+    - API keys (API_KEY, ACCESS_KEY)
+    - Private keys & sensitive configs
 
 - 📊 **Risk Scoring System**
-	- Each finding is evaluated and assigned a severity score so you can quickly prioritize real threats over noise.
+  - Each finding is evaluated and assigned a severity score so you can quickly prioritize real threats over noise.
 
 - 🐳 **Supports Both Containers and Images**
-	- Scan running containers
-	- Scan local Docker images before deployment
-	- Shift-left security checks in CI pipelines
+  - Scan running containers
+  - Scan local Docker images before deployment
+  - Shift-left security checks in CI pipelines
 
 - 🖥️ **Readable CLI Output**
-	- Colored terminal output
-	- Structured table format
-	- Clear severity visualization (Low / Medium / High)
+  - Colored terminal output
+  - Structured table format
+  - Clear severity visualization (Low / Medium / High)
 
 - ⚡ **Fast & Lightweight**
-	- Written in Go, runs instantly without agents, sidecars, or external services.
+  - Written in Go, runs instantly without agents, sidecars, or external services.
 
 - 🔌 **CI/CD Friendly**
-	- Easily usable inside:
-		- GitHub Actions
-		- GitLab CI
-		- Jenkins pipelines
-		- Pre-deployment checks
+  - Easily usable inside:
+    - GitHub Actions
+    - GitLab CI
+    - Jenkins pipelines
+    - Pre-deployment checks
 
 - 🧩 **Modular Architecture**
-	- Clean internal modules:
-		- docker → container/image inspection
-		- scanner → env extraction
-		- analyzer → rules & scoring
-		- output → formatting & reporting
+  - Clean internal modules:
+    - docker → container/image inspection
+    - scanner → env extraction
+    - analyzer → rules & scoring
+    - output → formatting & reporting
 
 ---
 
@@ -310,73 +310,53 @@ The tool is designed to be fast, dependency-free, and CI-friendly, making it sui
 
 ## Getting Started
 
-### Prerequisites
-
-This project requires the following dependencies:
-
-- **Programming Language:** Go
-- **Package Manager:** Go modules
-- **Container Runtime:** Docker
-
 ### Installation
 
-Build dockenv from the source and intsall dependencies:
+You can install **dockenv** with a single command:
 
-1. **Clone the repository:**
-
-   ```sh
-   ❯ git clone https://github.com/arasdenizhan/dockenv
-   ```
-
-2. **Navigate to the project directory:**
-
-   ```sh
-   ❯ cd dockenv
-   ```
-
-3. **Install the dependencies:**
-
-<!-- SHIELDS BADGE CURRENTLY DISABLED -->
-
-    <!-- [![docker][docker-shield]][docker-link] -->
-    <!-- REFERENCE LINKS -->
-    <!-- [docker-shield]: https://img.shields.io/badge/Docker-2CA5E0.svg?style={badge_style}&logo=docker&logoColor=white -->
-    <!-- [docker-link]: https://www.docker.com/ -->
-
-    **Using [docker](https://www.docker.com/):**
-
-    ```sh
-    ❯ docker build -t arasdenizhan/dockenv .
-    ```
-
-<!-- SHIELDS BADGE CURRENTLY DISABLED -->
-
-    <!-- [![go modules][go modules-shield]][go modules-link] -->
-    <!-- REFERENCE LINKS -->
-    <!-- [go modules-shield]: https://img.shields.io/badge/Go-00ADD8.svg?style={badge_style}&logo=go&logoColor=white -->
-    <!-- [go modules-link]: https://golang.org/ -->
-
-    **Using [go modules](https://golang.org/):**
-
-    ```sh
-    ❯ go build
-    ```
-
-### Usage
-
-Run the project with:
-
-**Using [docker](https://www.docker.com/):**
-
-```sh
-docker run -it {image_name}
+```bash
+curl -fsSL https://raw.githubusercontent.com/arasdenizhan/dockenv/master/install.sh | sh
 ```
 
-**Using [go modules](https://golang.org/):**
+The script will:
 
-```sh
-go run {entrypoint}
+1. Detect your operating system and CPU architecture
+2. Download the latest release binary from GitHub
+3. Make it executable
+4. Move it into `/usr/local/bin`
+5. Verify the installation
+
+### Verify Installation
+
+After installation, confirm that dockenv is available:
+
+```bash
+dockenv --help
 ```
+
+You should see the CLI help menu with available commands.
+
+### Quick Test
+
+Run a container with intentionally bad environment variables:
+
+```bash
+docker run -d --name vulnerable \
+-e DB_PASSWORD=admin123 \
+-e AWS_SECRET_ACCESS_KEY=verysecret \
+-e JWT_SECRET=superjwt \
+nginx
+```
+
+Scan it:
+
+```bash
+dockenv scan -c vulnerable
+```
+
+dockenv will analyze the container and report risky environment variables with a security score.
+
+---
 
 ### Testing
 
