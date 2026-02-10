@@ -1,8 +1,9 @@
 package cmd
 
 import (
-	"dockenv/internal/output"
 	"os"
+
+	"github.com/arasdenizhan/dockenv/internal/output"
 
 	"github.com/spf13/cobra"
 )
