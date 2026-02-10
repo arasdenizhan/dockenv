@@ -2,7 +2,6 @@ package docker
 
 import (
 	"context"
-	"fmt"
 	"log"
 
 	"github.com/moby/moby/client"
@@ -20,11 +19,5 @@ func GetContainerEnvs(id string) ([]string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-    envs := inspect.Container.Config.Env
-
-    fmt.Println("ENV VARIABLES:")
-    for _, e := range envs {
-        fmt.Println(e)
-    }
-    return []string{}
+    return inspect.Container.Config.Env
 }
