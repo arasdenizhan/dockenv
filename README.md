@@ -278,26 +278,6 @@ The tool is designed to be fast, dependency-free, and CI-friendly, making it sui
 			</details>
 		</blockquote>
 	</details>
-	<!-- docker-test Submodule -->
-	<details>
-		<summary><b>docker-test</b></summary>
-		<blockquote>
-			<div class='directory-path' style='padding: 8px 0; color: #666;'>
-				<code><b>⦿ docker-test</b></code>
-			<table style='width: 100%; border-collapse: collapse;'>
-			<thead>
-				<tr style='background-color: #f8f9fa;'>
-					<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-					<th style='text-align: left; padding: 8px;'>Summary</th>
-				</tr>
-			</thead>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/arasdenizhan/dockenv/blob/master/docker-test/Dockerfile'>Dockerfile</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
-				</tr>
-			</table>
-		</blockquote>
-	</details>
 	<!-- cmd Submodule -->
 	<details>
 		<summary><b>cmd</b></summary>
