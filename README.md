@@ -18,6 +18,8 @@
 <img src="https://img.shields.io/github/languages/top/arasdenizhan/dockenv?style=default&color=0080ff" alt="repo-top-language">
 <img src="https://img.shields.io/github/languages/count/arasdenizhan/dockenv?style=default&color=0080ff" alt="repo-language-count">
 
+<img src="./dockenv-test.gif" alt="test">
+
 <!-- default option, no dependency badges. -->
 
 <!-- default option, no dependency badges. -->
