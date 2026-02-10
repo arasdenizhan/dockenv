@@ -49,7 +49,7 @@
 
 **dockenv** is a lightweight security tool that analyzes Docker containers and images for exposed or risky environment variables.
 
-Modern applications frequently store secrets such as API keys, database credentials, tokens, and private configuration values inside environment variables. While convenient, this practice can easily lead to accidental leaksö especially in shared images, misconfigured deployments, or CI/CD pipelines.
+Modern applications frequently store secrets such as API keys, database credentials, tokens, and private configuration values inside environment variables. While convenient, this practice can easily lead to accidental leaks especially in shared images, misconfigured deployments, or CI/CD pipelines.
 
 **dockenv** helps you catch these problems early.
 
