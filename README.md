@@ -10,7 +10,7 @@
 <em></em>
 
 <!-- BADGES -->
-<img src="https://img.shields.io/github/license/arasdenizhan/dockenv?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
+<img src="https://img.shields.io/github/license/arasdenizhan/dockenv?style=default&logo=mit&logoColor=white&color=0080ff" alt="license">
 <img src="https://img.shields.io/github/last-commit/arasdenizhan/dockenv?style=default&logo=git&logoColor=white&color=0080ff" alt="last-commit">
 <img src="https://img.shields.io/github/languages/top/arasdenizhan/dockenv?style=default&color=0080ff" alt="repo-top-language">
 <img src="https://img.shields.io/github/languages/count/arasdenizhan/dockenv?style=default&color=0080ff" alt="repo-language-count">
