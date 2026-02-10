@@ -45,11 +45,58 @@
 
 ## Overview
 
+**dockenv** is a lightweight security tool that analyzes Docker containers and images for exposed or risky environment variables.
+
+Modern applications frequently store secrets such as API keys, database credentials, tokens, and private configuration values inside environment variables. While convenient, this practice can easily lead to accidental leaksö especially in shared images, misconfigured deployments, or CI/CD pipelines.
+
+**dockenv** helps you catch these problems early.
+
+It inspects Docker environments, extracts environment variables, and applies an intelligent rule-based analysis engine to detect sensitive data and assign a risk severity score. This allows developers and DevOps engineers to quickly identify security risks before they reach production.
+
+The tool is designed to be fast, dependency-free, and CI-friendly, making it suitable for local development, pre-deployment validation, and automated security checks.
+
 ---
 
 ## Features
+- 🔍 **Docker Environment Variable Security Scanning**
+	- Scans Docker containers and images to detect sensitive or risky environment variables (e.g. secrets, tokens, passwords, API keys) 
 
-<code>❯ REPLACE-ME</code>
+- 🧠 **Rule-Based Risk Analysis Engine**
+	- Built-in detection rules identify common secret patterns:
+		- Credentials (PASSWORD, PASS, SECRET)
+		- Tokens (TOKEN, JWT, AUTH)
+		- API keys (API_KEY, ACCESS_KEY)
+		- Private keys & sensitive configs
+
+- 📊 **Risk Scoring System**
+	- Each finding is evaluated and assigned a severity score so you can quickly prioritize real threats over noise.
+
+- 🐳 **Supports Both Containers and Images**
+	- Scan running containers
+	- Scan local Docker images before deployment
+	- Shift-left security checks in CI pipelines
+
+- 🖥️ **Readable CLI Output**
+	- Colored terminal output
+	- Structured table format
+	- Clear severity visualization (Low / Medium / High)
+
+- ⚡ **Fast & Lightweight**
+	- Written in Go, runs instantly without agents, sidecars, or external services.
+
+- 🔌 **CI/CD Friendly**
+	- Easily usable inside:
+		- GitHub Actions
+		- GitLab CI
+		- Jenkins pipelines
+		- Pre-deployment checks
+
+- 🧩 **Modular Architecture**
+	- Clean internal modules:
+		- docker → container/image inspection
+		- scanner → env extraction
+		- analyzer → rules & scoring
+		- output → formatting & reporting
 
 ---
 
@@ -417,20 +464,6 @@ go test ./...
 
 ## License
 
-Dockenv is protected under the [LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
-
----
-
-## Acknowledgments
-
-- Credit `contributors`, `inspiration`, `references`, etc.
-
-<div align="right">
-
-[![][back-to-top]](#top)
-
-</div>
-
-[back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square
+Dockenv is protected under the [MIT LICENSE](https://github.com/arasdenizhan/dockenv?tab=MIT-1-ov-file) License. For more details, refer to the [LICENSE](https://github.com/arasdenizhan/dockenv?tab=MIT-1-ov-file) file.
 
 ---
