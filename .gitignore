@@ -27,3 +27,6 @@ go.work.sum
 # powershell build script
 build.ps1
 *.ps1
+
+# dist folder
+dist
