@@ -8,7 +8,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var version = "dev"
+var version = "v1.0.0"
 var noColor bool
 
 var rootCmd = &cobra.Command{
