@@ -1,33 +1,22 @@
 package analyzer
 
-type Severity string
+import "github.com/arasdenizhan/dockenv/pkg/model"
 
-const (
-    Critical Severity = "CRITICAL"
-    High     Severity = "HIGH"
-    Medium   Severity = "MEDIUM"
-    Low      Severity = "LOW"
-)
 
-type Finding struct {
-    Severity Severity
-    Message  string
-    Env      string
-}
 
-func Analyze(env string) *Finding {
+func Analyze(env string) *model.Finding {
     if len(env) == 0 {
         return nil
     }
 
     if contains(env, "SECRET") {
-        return &Finding{Critical, "Secret exposed", env}
+        return &model.Finding{Severity: string(model.Critical), Message: "Secret exposed", Env: env}
     }
     if contains(env, "PASSWORD") {
-        return &Finding{High, "Password detected", env}
+        return &model.Finding{Severity: string(model.High), Message:"Password detected", Env:env}
     }
     if contains(env, "DEBUG=true") {
-        return &Finding{Medium, "Debug mode enabled", env}
+        return &model.Finding{Severity:string(model.Medium), Message:"Debug mode enabled", Env:env}
     }
     return nil
 }

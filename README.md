@@ -106,8 +106,6 @@ The tool is designed to be fast, dependency-free, and CI-friendly, making it sui
     ├── cmd
     │   ├── root.go
     │   └── scan.go
-    ├── docker-test
-    │   └── Dockerfile
     ├── go.mod
     ├── go.sum
     ├── internal

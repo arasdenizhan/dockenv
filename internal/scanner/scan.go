@@ -6,6 +6,7 @@ import (
 	"github.com/arasdenizhan/dockenv/internal/analyzer"
 	"github.com/arasdenizhan/dockenv/internal/docker"
 	"github.com/arasdenizhan/dockenv/internal/output"
+	"github.com/arasdenizhan/dockenv/pkg/model"
 )
 
 func ScanTarget(targetToScan string, isImage bool) {
@@ -20,8 +21,8 @@ func ScanTarget(targetToScan string, isImage bool) {
     printResult(findings, analyzer.Score(findings))
 }
 
-func analyzeFindings(variables []string) ([]*analyzer.Finding){
-    findings := []*analyzer.Finding{}
+func analyzeFindings(variables []string) ([]*model.Finding){
+    findings := []*model.Finding{}
     for _, val := range variables {
         findings = append(findings, analyzer.Analyze(val))
     }
@@ -31,7 +32,7 @@ func analyzeFindings(variables []string) ([]*analyzer.Finding){
     return findings
 }
 
-func printResult(findings []*analyzer.Finding, score int){
+func printResult(findings []*model.Finding, score int){
     for _, fndng := range findings {
         if(fndng == nil || fndng.Severity == ""){
             continue

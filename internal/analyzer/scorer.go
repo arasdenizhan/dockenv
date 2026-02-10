@@ -1,19 +1,21 @@
 package analyzer
 
-func Score(findings []*Finding) int {
+import "github.com/arasdenizhan/dockenv/pkg/model"
+
+func Score(findings []*model.Finding) int {
     score := 100
     for _, f := range findings {
         if(f == nil || f.Severity == ""){
             continue
         }
         switch f.Severity {
-        case Critical:
+        case string(model.Critical):
             score -= 30
-        case High:
+        case string(model.High):
             score -= 15
-        case Medium:
+        case string(model.Medium):
             score -= 5
-        case Low:
+        case string(model.Low):
             score -= 1
         }
     }
