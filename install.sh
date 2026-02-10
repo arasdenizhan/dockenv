@@ -31,7 +31,6 @@ curl -fL "$URL" -o "$BINARY"
 
 chmod +x "$BINARY"
 
-# install dir logic
 if [ -w "/usr/local/bin" ]; then
     INSTALL_DIR="/usr/local/bin"
 else
@@ -44,7 +43,6 @@ mv "$BINARY" "$INSTALL_DIR/$BINARY"
 echo ""
 echo "dockenv installed to $INSTALL_DIR"
 
-# PATH kontrol
 if [[ ":$PATH:" != *":$INSTALL_DIR:"* ]]; then
     echo "Add this to your shell config:"
     echo "export PATH=\"$INSTALL_DIR:\$PATH\""
